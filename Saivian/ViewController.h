@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
-
-
+{
+}
+@property (weak, nonatomic) IBOutlet UIButton *signinBtn;
+-(IBAction)signInPressed:(id)sender;
 @end
 

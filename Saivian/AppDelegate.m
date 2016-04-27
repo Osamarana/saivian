@@ -7,16 +7,23 @@
 //
 
 #import "AppDelegate.h"
-
+#import "NavigationHandler.h"
 @interface AppDelegate ()
 
 @end
 
 @implementation AppDelegate
-
+@synthesize viewController,navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    NavigationHandler *navHandler = [[NavigationHandler alloc] initWithMainWindow:self.window];
+    [navHandler loadFirstVC];
+    
+    [self.window makeKeyAndVisible];
     return YES;
 }
 
